@@ -1,0 +1,182 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/21/2023 7:28:14 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-05B3AIT"
+  DTS:CreatorName="DESKTOP-05B3AIT\Madan Mohan"
+  DTS:DTSID="{004828FF-7395-4841-BC9B-4F65964BECCF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.521.0"
+  DTS:LocaleID="16393"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{1858F4A4-2F1B-449F-83C9-9A0B631796DB}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CopyEMP]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{A9A2EB2F-DA77-4DD7-906E-3D7B2D5D787E}"
+      DTS:ObjectName="CopyEMP">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="D:\CopyEMP" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[copyEMP.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{F0A565BF-248C-4449-835D-B9E62A9B9E48}"
+      DTS:ObjectName="copyEMP.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\copyEMP.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CopyFolder]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{5B0937A1-029D-4389-A921-D9B322330E27}"
+      DTS:ObjectName="CopyFolder">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="3"
+          DTS:ConnectionString="D:\CopyFolder" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[EMP.txt]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{AF904897-8F29-4C2D-A851-C6F2FDED3633}"
+      DTS:ObjectName="EMP.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\SSIS doc\EMP.txt" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SSIS doc]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{2053B8CF-0383-4EFE-8E2D-FF486A2AF7BF}"
+      DTS:ObjectName="SSIS doc">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="2"
+          DTS:ConnectionString="C:\SSIS doc" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AADB8087-B61C-41C0-AED6-6565E718A2B9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Source">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\SSIS doc\EMP.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3A755CE5-4AB6-4635-9FA6-8AE1384EB1ED}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Target">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\UsingVar.txt</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\File System Task"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{124620C9-D257-4290-89AC-86D9E0C07C3A}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="File System Task"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022 CTP2.0; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskSourcePath="{AF904897-8F29-4C2D-A851-C6F2FDED3633}"
+          TaskDestinationPath="{A9A2EB2F-DA77-4DD7-906E-3D7B2D5D787E}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\File System Task 1"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{90E50932-428A-4AE4-804E-17A681E245BB}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="File System Task 1"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022 CTP2.0; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="2">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::Source"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="User::Target"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\File System Task 2"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{636DAA5D-CB4C-456D-AF0F-4197F0B1BCDB}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="File System Task 2"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022 CTP2.0; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="CopyDirectory"
+          TaskSourcePath="{2053B8CF-0383-4EFE-8E2D-FF486A2AF7BF}"
+          TaskDestinationPath="{5B0937A1-029D-4389-A921-D9B322330E27}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="159.5,42"
+          Id="Package\File System Task"
+          TopLeft="33,26.5416665348328" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\File System Task 1"
+          TopLeft="24,95.3333328598075" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\File System Task 2"
+          TopLeft="52.5,171.708332480449" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
